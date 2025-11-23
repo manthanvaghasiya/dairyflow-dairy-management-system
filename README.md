@@ -34,3 +34,36 @@ This project uses a monorepo structure. You will need to run the Frontend and Ba
 ```bash
 git clone [https://github.com/ManthanVaghasiya/dairyflow-management-system.git](https://github.com/ManthanVaghasiya/dairyflow-management-system.git)
 cd dairyflow-management-system
+
+2.Setup Backend
+Open a terminal and navigate to the backend folder:
+
+Bash
+
+cd dairy_backend
+
+# Install dependencies
+npm install
+
+# Create a .env file and add your MongoDB URI
+# PORT=5000
+# MONGO_URI=your_connection_string
+
+# Start the server
+npm start
+
+3. Setup Frontend
+Open a new terminal and navigate to the frontend folder:
+
+Bash
+
+cd dairy_frontend
+
+# Install dependencies
+npm install
+
+# Start the React app
+npm start
+
+📬 Contact
+Manthan Vaghasiya - Full Stack Developer
