@@ -1,0 +1,127 @@
+/* --- Global Styles & Variables --- */
+:root {
+  --color-primary: #4f46e5;
+  --color-primary-hover: #4338ca;
+  --color-secondary: #10b981;
+  --color-danger: #ef4444;
+  --color-text-dark: #111827;
+  --color-text-medium: #6b7280;
+  --color-border: #e5e7eb;
+  --background-light: #f9fafb;
+  --background-white: #ffffff;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --border-radius: 0.75rem; /* Slightly larger radius for a softer look */
+}
+
+/* --- Main Page Layout --- */
+.sales-page {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--background-light);
+}
+
+.product-grid-container {
+  flex: 2; 
+  padding: 1.5rem; /* Reduced padding */
+  overflow-y: auto;
+}
+
+.current-sale-container {
+  flex: 1; 
+  background-color: var(--background-white);
+  border-left: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  min-width: 420px; /* Reduced width */
+  box-shadow: -10px 0 25px rgba(0,0,0,0.05);
+}
+
+.sales-header { margin-bottom: 1.5rem; }
+.sales-header h1 { font-size: 2rem; font-weight: bold; } /* Reduced font size */
+.sales-header p { color: var(--color-text-medium); margin-top: 0.25rem; }
+
+/* --- Product Grid & Cards --- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* Reduced card size */
+  gap: 1.25rem; /* Reduced gap */
+}
+
+.product-card {
+  background-color: var(--background-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+}
+
+.product-card:hover { 
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+  border-color: var(--color-primary);
+}
+
+.product-card-image { width: 100%; height: 60%; object-fit: cover; } /* Adjusted image height */
+.product-card-info { padding: 0.75rem; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
+.product-card-name { font-size: 0.9rem; font-weight: 600; margin: 0; } /* Reduced font size */
+.product-card-unit { font-size: 0.8rem; color: var(--color-text-medium); margin-top: 0.25rem; } /* Reduced font size */
+
+/* --- Current Sale Summary --- */
+.sale-summary { 
+  padding: 1.5rem; /* Reduced padding */
+  display: flex; 
+  flex-direction: column; 
+  height: 100%; 
+  box-sizing: border-box;
+}
+.sale-summary h2 { font-size: 1.5rem; font-weight: bold; margin: 0 0 1rem 0; } /* Reduced font size */
+.sale-items-list { list-style: none; padding: 0; margin: 0; overflow-y: auto; flex-grow: 1; }
+.sale-item { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; border-radius: var(--border-radius); margin-bottom: 0.5rem; background-color: var(--background-light); } /* Reduced padding */
+.item-name { font-weight: 600; font-size: 0.9rem; }
+.item-price { font-weight: 600; font-size: 0.9rem; }
+.empty-sale-message { text-align: center; color: var(--color-text-medium); padding: 2.5rem; }
+.sale-total { display: flex; justify-content: space-between; font-size: 1.25rem; font-weight: bold; padding-top: 1rem; border-top: 1px solid var(--color-border); margin-top: auto; } /* Reduced font size and padding */
+
+/* --- Step 2: Finalize Sale Styles --- */
+.customer-selection-area, .payment-method-area {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 1rem;
+}
+
+.payment-method-area h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; }
+.payment-options { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.payment-btn { width: 100%; padding: 0.75rem; border: 2px solid var(--color-border); background-color: var(--background-white); border-radius: var(--border-radius); cursor: pointer; font-weight: 600; transition: all 0.2s; }
+.payment-btn.unpaid { grid-column: 1 / -1; margin-top: 0.5rem; }
+.payment-btn:hover { border-color: var(--color-primary); }
+.payment-btn.active { background-color: var(--color-primary); color: white; border-color: var(--color-primary); }
+.payment-btn.unpaid.active { background-color: var(--color-danger); border-color: var(--color-danger); }
+
+/* --- Finalize Actions (Back/Complete Sale Buttons) --- */
+.finalize-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.finalize-actions .btn-secondary,
+.finalize-actions .btn-primary {
+    padding: 0.875rem; /* Reduced padding */
+    font-size: 0.9rem; /* Reduced font size */
+    font-weight: bold;
+}
+
+.finalize-actions .btn-secondary {
+    background-color: #e5e7eb;
+    color: var(--color-text-dark);
+}
+
+.finalize-actions .btn-secondary:hover {
+    background-color: #d1d5db;
+}

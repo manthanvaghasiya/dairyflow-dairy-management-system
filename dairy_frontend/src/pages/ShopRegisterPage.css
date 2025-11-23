@@ -1,0 +1,70 @@
+/* --- Registration Page Styles --- */
+
+.login-register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+  /* Consistent background with login page */
+  background: #7F7FD5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+  background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+  overflow: hidden;
+}
+
+.register-form-container {
+  padding: 2.5rem 3rem;
+  max-width: 550px; /* Wider for more fields */
+  width: 100%;
+  box-sizing: border-box;
+  /* --- Glassmorphism Effect --- */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Make form text more readable */
+.register-form-container .form-title,
+.register-form-container label,
+.register-form-container p {
+  color: var(--color-text-dark);
+}
+
+/* Enhance input fields */
+.register-form-container .form-input {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.register-form-container .form-input::placeholder {
+  color: var(--color-text-medium);
+}
+
+/* Section titles for better organization */
+.form-section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.form-section-title:first-of-type {
+    margin-top: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

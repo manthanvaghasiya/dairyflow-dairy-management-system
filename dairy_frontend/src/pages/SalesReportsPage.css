@@ -1,0 +1,171 @@
+/* --- Main Report Page Layout --- */
+.report-page {
+  padding: 2rem;
+  background-color: var(--background-light);
+  height: 100%;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+/* --- Statistics Cards Section --- */
+.stats-grid {
+  display: grid;
+  /* **CHANGE:** This now has 4 columns to put all cards in one line */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.stat-card {
+  background-color: var(--background-white);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  border-left: 5px solid var(--color-primary);
+}
+
+.stat-card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-medium);
+  margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-text-dark);
+}
+
+.stat-card p.debt {
+  color: var(--color-danger);
+}
+
+/* --- Main Report Section (Table and Filters) --- */
+.report-section {
+  background-color: var(--background-white);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.report-section h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Date Filter Section --- */
+.filter-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+}
+
+.filter-section .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-section label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.filter-section .form-input {
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  min-width: 180px;
+}
+
+.filter-section .btn-primary,
+.filter-section .btn-secondary {
+  padding: 0.6rem 1.5rem;
+  height: fit-content;
+}
+
+
+/* --- General Table Styles --- */
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+th {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--color-text-medium);
+  background-color: #f9fafb;
+}
+
+/* **NEW:** Style for the items cell to prevent it from getting too wide */
+td.items-cell {
+  max-width: 300px;
+  white-space: normal; /* Allow text to wrap */
+  font-size: 0.875rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+/* --- Payment Status Badge --- */
+.payment-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+}
+
+.payment-status.paid {
+  background-color: #dcfce7; /* Light Green */
+  color: #166534; /* Dark Green */
+}
+
+.payment-status.unpaid {
+  background-color: #fee2e2; /* Light Red */
+  color: #991b1b; /* Dark Red */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 1200px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

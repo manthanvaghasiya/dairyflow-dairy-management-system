@@ -1,0 +1,57 @@
+/* --- Login Page Styles --- */
+
+.login-register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+  /* A more dynamic, two-tone background */
+  background: #7F7FD5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+  background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+  overflow: hidden; /* Hide overflow from animations */
+}
+
+.login-form-container {
+  padding: 2.5rem 3rem;
+  max-width: 450px;
+  width: 100%;
+  box-sizing: border-box;
+  /* --- Glassmorphism Effect --- */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Make form text more readable on the glass background */
+.login-form-container .form-title,
+.login-form-container label,
+.login-form-container p {
+  color: var(--color-text-dark);
+}
+
+/* Enhance input fields for the glass effect */
+.login-form-container .form-input {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.login-form-container .form-input::placeholder {
+  color: var(--color-text-medium);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

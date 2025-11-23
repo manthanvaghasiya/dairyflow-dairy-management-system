@@ -1,0 +1,19 @@
+.public-footer {
+    background-color: #1f2937; /* Dark Grey */
+    color: #d1d5db; /* Light grey text */
+    padding: 48px 32px;
+    text-align: center;
+  }
+  
+  .footer-credit-line {
+    font-size: 1.125rem;
+    color: white;
+    font-weight: 500;
+    margin: 0 0 8px 0;
+  }
+  
+  .footer-copyright {
+    margin: 0;
+    font-size: 0.875rem;
+  }
+  
